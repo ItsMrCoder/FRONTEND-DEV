@@ -30,3 +30,21 @@ function changePicture() {
 nextBtn.addEventListener("click", changePicture);
 
 setInterval(changePicture, 5000);
+
+// let message = document.querySelector(".message");
+// let messages = ['Welcome to my website!', 'Enjoy your stay!', 'Check out our latest updates!', 'Feel free to explore!', 'Contact us for more information!'];
+
+// let btn = document.querySelector(".btn");
+// let index = 0
+
+// btn.addEventListener("click", () => {
+//     message.textContent = messages[index]
+//     index += 1
+//     if (index == messages.length) {
+//         index = 0
+//     }
+// })
+
+// setInterval(() => {
+//     message.textContent = "Welcome to my website!";
+// }, 5000);
