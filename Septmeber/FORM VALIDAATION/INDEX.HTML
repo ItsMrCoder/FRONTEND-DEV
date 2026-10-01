@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="registerForm">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+            <p id="nameError" class="error"></p>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <p id="emailError" class="error"></p>
+        </div>
+
+        <div>
+            <label for="dob">Password</label>
+            <input type="password" name="password" id="password" required>
+            <p id="passwordError" class="error"></p>
+        </div>
+
+        <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob">
+        </div>
+
+        <button type="submit">Register</button> 
+    </form>
+
+    
+    <script src="app.js"></script>
+</body>
+</html>

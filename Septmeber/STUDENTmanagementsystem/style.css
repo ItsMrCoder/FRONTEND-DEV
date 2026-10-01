@@ -1,0 +1,371 @@
+/* =====================================================
+   COLOURS
+   Change a colour here and it changes everywhere.
+   ===================================================== */
+:root {
+    --pine: #16302b;        /* sidebar */
+    --pine-soft: #234740;   /* sidebar hover */
+    --amber: #e8a33d;       /* main accent (buttons, active link) */
+    --amber-dark: #cf8d27;
+    --page: #f4f6f5;        /* page background */
+    --card: #ffffff;
+    --text: #1c2624;
+    --muted: #66746f;
+    --line: #e2e8e6;
+    --danger: #c8443a;
+    --radius: 12px;
+}
+
+/* Reset: remove default spaces so all browsers look the same */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    background: var(--page);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* =====================================================
+   LAYOUT: sidebar on the left, content on the right
+   ===================================================== */
+.dashboard {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+    background: var(--pine);
+    color: #fff;
+    padding: 32px 20px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+    padding-left: 12px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidebar nav a {
+    color: #b9c9c4;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar nav a:hover {
+    background: var(--pine-soft);
+    color: #fff;
+}
+
+.sidebar nav a.active {
+    background: var(--amber);
+    color: var(--pine);
+}
+
+/* ---------- Main content ---------- */
+.main-content {
+    padding: 32px 40px;
+    min-width: 0; /* lets the table scroll instead of stretching the page */
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.topbar h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.topbar p {
+    color: var(--muted);
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--amber);
+    color: var(--pine);
+    border: none;
+    padding: 11px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: var(--amber-dark);
+}
+
+/* =====================================================
+   NUMBER CARDS
+   ===================================================== */
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.stat-card span {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.stat-card h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 4px;
+}
+
+/* =====================================================
+   SEARCH AND FILTER
+   ===================================================== */
+.toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.toolbar input {
+    flex: 1;
+}
+
+input,
+select {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--card);
+    color: var(--text);
+}
+
+/* The glow you see when you click inside a box */
+input:focus,
+select:focus {
+    outline: 2px solid var(--amber);
+    outline-offset: 1px;
+}
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+.table-wrap {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow-x: auto; /* small screens: table scrolls sideways */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 14px 18px;
+    white-space: nowrap;
+}
+
+th {
+    background: #f9fbfa;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--line);
+}
+
+td {
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f9fbfa;
+}
+
+/* Edit and Delete buttons inside the table
+   (the JavaScript creates these, so we style them by position) */
+td button {
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--text);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 6px;
+    transition: background 0.2s;
+}
+
+td button:hover {
+    background: var(--page);
+}
+
+td button:last-child {
+    color: var(--danger);
+    border-color: #f0cdca;
+    margin-right: 0;
+}
+
+td button:last-child:hover {
+    background: #fdf1f0;
+}
+
+/* =====================================================
+   POPUP (MODAL)
+   It starts hidden. The JavaScript changes it to
+   display: flex when you click "Add student".
+   ===================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0; /* cover the whole screen */
+    background: rgba(22, 48, 43, 0.55);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+.modal-content {
+    background: var(--card);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 16px;
+    padding: 28px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--muted);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+}
+
+.btn-close:hover {
+    background: var(--page);
+}
+
+#studentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#studentForm label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 8px;
+}
+
+#studentForm .btn-primary {
+    margin-top: 20px;
+    padding: 13px;
+}
+
+/* =====================================================
+   SMALL SCREENS (tablet and phone)
+   ===================================================== */
+@media (max-width: 900px) {
+    .statistics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    /* Sidebar moves to the top */
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        padding: 16px 20px;
+    }
+
+    .logo {
+        margin-bottom: 12px;
+        padding-left: 0;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .main-content {
+        padding: 24px 16px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toolbar {
+        flex-direction: column;
+    }
+}

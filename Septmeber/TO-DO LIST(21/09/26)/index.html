@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo-container">
+        <header class="todo-header">
+            <h1>My To-Do List</h1>
+            <p>Organize your day, one task at a time.</p>
+        </header>
+
+        <form class="todo-form" id="todoForm">
+            <input type="text" id="taskInput" placeholder="What do you want to do" autocomplete="on">
+
+            <button type="submit">Add Task</button>
+        </form>
+        <p class="errorMessage"></p>
+
+        <ol class="task-list">
+            
+        </ol>
+
+        <div class="empty-message">
+            <h3>No task yet</h3>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

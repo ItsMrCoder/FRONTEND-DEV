@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerForm{
+    border-left: 6px solid #c68a2e;
+    max-width: 420px;
+    width: 100%;
+    background: rgb(80, 72, 72);
+    color: white;
+    padding: 48px 40px;   
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label{
+    font-size: 13px;
+}
+
+/* Make the page more astetichial pleasing */
+
