@@ -3,32 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My To-Do List</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="todo-container">
+    <main class="todo-container">
         <header class="todo-header">
+            <p class="todo-date" id="todayDate"></p>
             <h1>My To-Do List</h1>
-            <p>Organize your day, one task at a time.</p>
+            <p class="todo-tagline">Organize your day, one task at a time.</p>
         </header>
 
-        <form class="todo-form" id="todoForm">
-            <input type="text" id="taskInput" placeholder="What do you want to do" autocomplete="on">
-
-            <button type="submit">Add Task</button>
-        </form>
-        <p class="errorMessage"></p>
-
-        <ol class="task-list">
-            
-        </ol>
-
-        <div class="empty-message">
-            <h3>No task yet</h3>
+        <div class="progress" id="progress">
+            <p class="progress-label" id="progressLabel">0 of 0 done</p>
+            <div class="progress-track">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
         </div>
 
-    </div>
+        <form class="todo-form" id="todoForm">
+            <input type="text" id="taskInput" placeholder="What do you want to do?" autocomplete="off" aria-label="New task">
+            <button type="submit">Add task</button>
+        </form>
+        <p class="errorMessage" role="alert"></p>
+
+        <ol class="task-list"></ol>
+
+        <div class="empty-message">
+            <h3>No tasks yet</h3>
+            <p>Type a task above and press Add task.</p>
+        </div>
+    </main>
 
     <script src="app.js"></script>
 </body>
